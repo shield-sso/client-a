@@ -232,6 +232,7 @@ php:
             - cli
             - intl
             - xml
+            - zip
             - mbstring
             - sqlite
         pear: {  }
