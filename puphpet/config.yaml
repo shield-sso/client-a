@@ -168,6 +168,7 @@ nginx:
                     fast_cgi_params_extra:
                         - 'SCRIPT_FILENAME $request_filename'
                         - 'APP_ENV dev'
+                        - 'SYMFONY_SECRET 9c0e98885486450aeece88107a8f2e67'
                     set:
                         - '$path_info $fastcgi_path_info'
                     proxy: ''
