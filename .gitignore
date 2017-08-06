@@ -18,3 +18,4 @@
 .idea/
 puphpet/config-custom.yaml
 html/
+.vagrant/
