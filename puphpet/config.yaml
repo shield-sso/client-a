@@ -236,6 +236,7 @@ php:
             - mbstring
             - sqlite
             - zip
+            - curl
         pear: {  }
         pecl: {  }
     ini:
@@ -354,9 +355,21 @@ postgresql:
             version: '9.6'
         server:
             postgres_password: '123'
-    databases: {  }
-    users: {  }
-    grants: {  }
+    databases:
+        postsqlnd_j63qcbx8tuxi:
+            dbname: clienta
+            owner: postgres
+    users:
+        postsqlnu_zerinlml5l5n:
+            username: postgres
+            password: '123'
+            superuser: '1'
+    grants:
+        postsqlng_3gjuvd7qccvh:
+            role: postgres
+            db: clienta
+            privilege:
+                - ALL
 mongodb:
     install: '0'
     settings:
