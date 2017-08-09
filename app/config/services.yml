@@ -33,3 +33,9 @@ services:
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+    app.oauth_aware.user_provider.service:
+        class: \HWI\Bundle\OAuthBundle\Security\Core\User\EntityUserProvider
+        arguments:
+            - '@doctrine'
+            - AppBundle\Entity\User
+            - { shield_sso: 'username' }
