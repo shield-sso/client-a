@@ -25,9 +25,7 @@ framework:
     default_locale: '%locale%'
     trusted_hosts: ~
     session:
-        # https://symfony.com/doc/current/reference/configuration/framework.html#handler-id
-        handler_id: session.handler.native_file
-        save_path: /var/lib/php/sessions
+        handler_id: Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler
     fragments: ~
     http_method_override: true
     assets: ~
@@ -74,14 +72,20 @@ hwi_oauth:
     resource_owners:
         shield_sso:
             type: oauth2
-            client_id: client-a
-            client_secret: secret_a
-            access_token_url: http://sso.local/token
-            authorization_url: http://sso.local/authorize
-            infos_url: http://sso.local/api/data
+            client_id: '%oauth_client_id%'
+            client_secret: '%oauth_client_secret%'
+            access_token_url: '%oauth_access_token_url%'
+            authorization_url: '%oauth_authorization_url%'
+            infos_url: '%oauth_infos_url%'
             scope: basic
             user_response_class: HWI\Bundle\OAuthBundle\OAuth\Response\PathUserResponse
             paths:
                 identifier: login
                 nickname: login
                 realname: login
+
+doctrine_migrations:
+    dir_name: "%kernel.root_dir%/../DoctrineMigrations"
+    namespace: Application\Migrations
+    table_name: migration_versions
+    name: Client A Migrations

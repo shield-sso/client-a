@@ -13,3 +13,11 @@ if (!empty(getenv('DATABASE_URL'))) {
     $container->setParameter('database_user', $dbConfig['user']);
     $container->setParameter('database_password', $dbConfig['pass']);
 }
+
+if (!empty(getenv('SHIELD_SSO_URL'))) {
+    $container->setParameter('shield_sso_url', getenv('SHIELD_SSO_URL'));
+}
+
+if (!empty(getenv('OAUTH_CLIENT_SECRET'))) {
+    $container->setParameter('oauth_client_secret', getenv('OAUTH_CLIENT_SECRET'));
+}
