@@ -16,15 +16,20 @@ security:
 
         secured_area:
             anonymous: ~
+            logout:
+                path: /logout
+                target: /
             oauth:
                 resource_owners:
                     shield_sso: /login/check-sso
-                login_path: /login
+                login_path: /connect/shield_sso
                 use_forward: false
-                failure_path: /login
+                failure_path: /
 
                 oauth_user_provider:
                     service: my.oauth_aware.user_provider.service
 
     access_control:
-        - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/connect/shield_sso$, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/, roles: ROLE_USER }

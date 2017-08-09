@@ -1,5 +1,5 @@
 {
-    "name": "user/client-a",
+    "name": "shield-sso/client-a",
     "license": "proprietary",
     "type": "project",
     "autoload": {

@@ -9,6 +9,14 @@
 
             <div id="status">
                 <p>Log in will be implemented soon</p>
+
+                {% if is_granted('ROLE_USER') -%}
+                    <p>User: {{ app.user.username }}</p>
+
+                    <a href="{{ path('logout') }}">Logout</a>
+                {% else %}
+                    <a href="{{ path('login') }}">Login</a>
+                {% endif %}
             </div>
         </div>
     </div>

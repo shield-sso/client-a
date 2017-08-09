@@ -84,11 +84,3 @@ hwi_oauth:
                 identifier: login
                 nickname: login
                 realname: login
-
-fos_user:
-    db_driver: orm
-    firewall_name: secured_area
-    user_class: AppBundle\Entity\User
-    from_email:
-        address: "shield-sso@danieliwaniec.com"
-        sender_name: "shield-sso@danieliwaniec.com"

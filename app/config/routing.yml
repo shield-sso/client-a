@@ -1,17 +1,14 @@
-hwi_oauth_redirect:
-    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
-    prefix:   /connect
+login:
+    path: /connect/{service}
+    defaults: { _controller: HWIOAuthBundle:Connect:redirectToService, service: shield_sso }
+    requirements:
+        service: shield_sso
 
-hwi_oauth_connect:
-    resource: "@HWIOAuthBundle/Resources/config/routing/connect.xml"
-    prefix:   /connect
-
-hwi_oauth_login:
-    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
-    prefix:   /login
-
-sso_login:
+check_login:
     path: /login/check-sso
+
+logout:
+    path: /logout
 
 app:
     resource: '@AppBundle/Controller/'
