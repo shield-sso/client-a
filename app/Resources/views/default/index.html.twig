@@ -8,8 +8,6 @@
             </div>
 
             <div id="status">
-                <p>Log in will be implemented soon</p>
-
                 {% if is_granted('ROLE_USER') -%}
                     <p>User: {{ app.user.username }}</p>
 
