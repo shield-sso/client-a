@@ -48,7 +48,8 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
         ],
         "post-install-cmd": [
-            "@symfony-scripts"
+            "@symfony-scripts",
+            "bash provision.sh"
         ],
         "post-update-cmd": [
             "@symfony-scripts"
