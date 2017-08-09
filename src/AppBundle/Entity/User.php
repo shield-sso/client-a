@@ -14,6 +14,7 @@ class User extends OAuthUser
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
+     * @ORM\GeneratedValue
      */
     protected $id = null;
 
