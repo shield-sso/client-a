@@ -5,7 +5,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 require __DIR__.'/../vendor/autoload.php';
 
-if (getenv('APP_ENV') === 'dev') {
+if (getenv('APP_ENV') === 'dev' || true) {
     Debug::enable();
     $kernel = new AppKernel('dev', true);
 } else {
