@@ -12,3 +12,11 @@ parameters:
     mailer_password: ~
 
     secret: some_secret
+
+    shield_sso_url: http://sso.local
+
+    oauth_client_id: client-a
+    oauth_client_secret: secret_a
+    oauth_access_token_url: %shield_sso_url%/token
+    oauth_authorization_url: %shield_sso_url%/authorize
+    oauth_infos_url: %shield_sso_url%/api/data
