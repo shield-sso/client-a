@@ -34,7 +34,7 @@ services:
     #     arguments:
     #         $someArgument: 'some_value'
     app.oauth_aware.user_provider.service:
-        class: \HWI\Bundle\OAuthBundle\Security\Core\User\EntityUserProvider
+        class: AppBundle\Provider\UserProvider
         arguments:
             - '@doctrine'
             - AppBundle\Entity\User
